@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{
+      background-color: #D28F20;
+      font:30px "Snell Roundhand", cursive;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+    .knopka{
+      margin: 0 auto;
+      color: #14151B;
+      height: 70px;
+      width: 500px;
+      background-color: #707A8E;
+      padding: 15px;
+    }
+    #calendar2 {
+
+      width: 50%;
+      background-color: #D28F20;
+      line-height: 1.2em;
+      font-size: 15px;
+      text-align: center;
+      margin: 20px auto;
+      font-weight:bold;
+
+    }
+    #calendar2 thead tr:last-child {
+      font-size: medium;
+      font-style: italic;
+      color: #14151B;
+    }
+    #calendar2 thead tr:nth-child(1) td:nth-child(2) {
+      color: #14151B;
+    }
+    #calendar2 tbody td {
+      color: #14151B;
+      border-top: 1px solid grey;
+    }
+    #calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+      color:#707A8E;
+
+    }
+    #calendar2 tbody td.today {
+      background: #707A8E;
+      color: #D28F20;
+
+    }
+  </style>
+  <script>
+    function show_Time(){
+      let D=new Date();
+      let day=D.toLocaleString('ru', {weekday: 'long'});
+      let month=D.toLocaleString('ru', {month: 'long'});
+      let DT=document.getElementById("DT");
+      //полная дата и время
+      let data=D.getDate();
+      let year=D.getFullYear();
+      //let time_Hours=D.getHours();
+      let time_Hours=D.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+      let time_Min=D.getMinutes();
+      let time_Sec=D.getSeconds();
+      if (time_Sec<10) {time_Sec="0"+time_Sec}
+      if (data<10) {data="0"+data}
+      DT.innerHTML=day+", "+data+" "+month+" "+year+" "+time_Hours+":"+time_Min+":"+time_Sec;
+    }
+  </script>
+  <script>
+    function hide(str){
+      obj = document.getElementById(str);
+      if(obj){
+        if(obj.style.display=='none') obj.style.display='';
+        else obj.style.display='none';
+      }
+    }
+  </script>
+  <script>
+    function task3(str){
+      let DT3 = document.getElementById("DT3")
+      let count = document.getElementById(str).childElementCount;
+      DT3.innerHTML="Количество дочерних форм: "+count
+    }
+  </script>
+
+</head>
+<body>
+
+<h1 id="zagolovok" style="text-align: center; color: #14151B; padding-top: 30px"> Задание по JS - Вариант 5</h1>
+
+<div class="knopka" id="but" onClick="hide('DT')" style="cursor:pointer;">Задание 1 - Дата/время</div>
+<p id="DT" style="text-align: center; display: none;">
+  <script>
+    setInterval(show_Time, 1000)
+  </script>
+</p>
+
+<div class="knopka" id="but2" onClick="hide('DT2')" style="cursor:pointer;">Задание 2 - Календарь</div>
+<div id="DT2" style="text-align: center; display: none;">
+  <table id="calendar2">
+    <thead>
+    <tr><th><td colspan="5"><th>
+    <tr><th>Пн<th>Вт<th>Ср<th>Чт<th>Пт<th>Сб<th>Вс
+    <tbody>
+  </table>
+  <script>
+    function Calendar2(id, year, month) {
+      var Dlast = new Date(year,month+1,0).getDate(),
+              D = new Date(year,month,Dlast),
+              DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
+              DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
+              calendar = '<tr>',
+              month=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+      if (DNfirst != 0) {
+        for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
+      }else{
+        for(var  i = 0; i < 6; i++) calendar += '<td>';
+      }
+      for(var  i = 1; i <= Dlast; i++) {
+        if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+          calendar += '<td class="today">' + i;
+        }else{
+          calendar += '<td>' + i;
+        }
+        if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
+          calendar += '<tr>';
+        }
+      }
+      for(var  i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
+      document.querySelector('#'+id+' tbody').innerHTML = calendar;
+      document.querySelector('#'+id+' thead td:nth-child(2)').innerHTML = month[D.getMonth()] +' '+ D.getFullYear();
+
+    }
+    Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
+  </script>
+</div>
+
+<div class="knopka" id="but3" onClick="hide('DT3')" style="cursor:pointer;">Задание 3 - Нахождение элементов в DOM – дереве</div>
+<div id="DT3" style=" display: none;">
+  <div id="tyt_forms">
+    <form id="Form_1"></form>
+    <form id="Form_2"></form>
+    <form id="Form_3"></form>
+  </div>
+  <script>
+    task3("tyt_forms")
+  </script>
+</div>
+
+<div class="knopka" id="but4" onClick="hide('DT4')" style="cursor:pointer;">Задание 4 - </div>
+<div id="DT4" style=" display: none;">
+  igig
+</div>
+</body>
+</html>

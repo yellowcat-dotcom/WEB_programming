@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{margin: 0; margin-top:-15px;}
+    textarea {
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      width: 400px;
+      text-align: center;
+    }
+    input{
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      width: 400px;
+      text-align: center;
+    }
+    div
+    {   /*border:1px solid black;*/
+      width:80px;
+      height:80px;
+    }
+    .sticky{
+      height: 90px ;
+      width: 100%;
+      position: -webkit-sticky;
+      position: sticky;
+      top: -40px;
+      background: #f2f2f2;
+      min-width: 1040px;
+    }
+    #ded{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      background-image: url("image/fon.png");
+      align-items: center;
+      min-width: 1040px;
+    }
+    #ded_2{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      background-color: white;
+      min-width: 1040px;
+    }
+    #ded_3{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      background-image: url("image/fon.png");
+      align-items: center;
+      min-width: 1040px;
+    }
+    #ded_4{
+      width: 100%;
+      height:700px;
+      display: flex;
+      flex-direction: row;
+      background-color: #FFFFFF;
+      min-width: 1040px;
+    }
+
+    #ded_5{
+      width: 100%;
+      height:700px;
+      display: flex;
+      flex-direction: row;
+      background-image: url("image/kryg.jpg");
+      min-width: 1040px;
+      background-size: 1520px 1000px;
+      background-repeat: no-repeat;
+      background-position: center calc(40%);
+    }
+    #ded_6{
+      width: 100%;
+      height:1010px;
+      display: flex;
+      flex-direction: column;
+      background-image: url("image/2023-03-03_14-22-27.png");
+      background-position: center;
+      background-size: 2350px 1200px;
+      /*flex-wrap: wrap;*/
+      min-width: 1040px;
+
+    }
+    .very_big{
+      width: 100%;
+      min-width: 1000px;
+    }
+    #ded_mini_podpis{
+      height: 20%;
+      text-align: center;
+      padding-top: 10px;
+      font: 2.3rem "Raleway", sans-serif;
+
+    }
+    #ded_mini{
+      height: 65%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    #parent_0{
+      width: 40%;
+      height: 450px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      min-width: 500px;
+      padding: 10px;
+    }
+
+    #parent_1{
+      width: 40%;
+      height:690px;
+      margin: 0 auto;
+      background-image: url("image/devyshka.png");
+      background-size: 400px 600px;
+      background-repeat: no-repeat;
+      align-items: center;
+      background-position: center calc(100%);
+      min-height: 200px;
+      min-width: 500px;
+    }
+
+    #parent_2{
+      width: 40%;
+      height: 690px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      min-width: 500px;
+    }
+
+    #parent_3{
+      width: 35%;
+      height: 520px;
+      display: flex;
+      flex-direction: column;
+      min-width: 500px;
+      margin: auto;
+      padding: 10px;
+    }
+
+    #parent_4{
+      width: 40%;
+      height: 550px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      min-width: 500px;
+      padding: 10px;
+    }
+
+    #parent_5{
+      width: 40%;
+      height: 690px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      min-width: 500px;
+    }
+
+    #parent_6{
+      width: 40%;
+      height:600px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      /*justify-content: space-between;*/
+      min-width: 520px;
+    }
+    #parent_7{
+      width: 40%;
+      height:670px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      min-width: 520px;
+    }
+
+    #parent_8{
+      width: 20%;
+      height:600px;
+      margin: 60px 0 20px auto;
+      display: flex;
+      flex-direction:column;
+      min-width: 500px;
+    }
+
+    #parent_9{
+      width: 30%;
+      height: 600px;
+      margin: 50px auto 20px 0;
+      display: flex;
+      flex-direction: row;
+      min-width: 500px;
+    }
+
+    .big_big{
+      width: 40%;
+      height:100%;
+      display: flex;
+      flex-direction: column;
+      /*justify-content: space-between;*/
+      min-width: 500px;
+    }
+
+    .parent_for_mini{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+    #parent_for_mini_1{
+      height:55%;
+    }
+    #parent_for_mini_2{
+      height:45%;
+    }
+    #parent_for_mini_3{
+      height:45%;
+    }
+    #parent_for_mini_4{
+      height:55%;
+    }
+    .mini{
+      width: 50%;
+      height:100%;
+    }
+
+    #big_big_0{
+      margin: 0 0 0 auto;
+    }
+    #big_big_1{
+      margin: 0 auto 0 0;
+    }
+
+
+    .batar{
+      width: auto;
+      margin: -20px 0;
+      height: auto;
+    }
+
+    #b1{
+      /*background-color: blue;*/
+      height: content-box;
+      font: 20px "PT Sans", sans-serif;
+      text-transform: uppercase;
+      line-height: 0.01em;
+      margin: 0;
+      min-width: 500px;
+    }
+    #b2 {
+      /*background-color: red;*/
+      font: 30px "Yu Gothic UI Light";
+      /*position: sticky;*/
+      line-height: 0.01em;
+      min-width: 500px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    #b3 {
+      /*background-color: yellow;*/
+      margin: -10px 0;
+      font: 30px "Calibri";
+      font-style: italic;
+      padding: -30px 0;
+      color: #292E33;
+      min-width: 500px;
+    }
+    #b4 {
+      color: #FFFFFF;
+      height: 30px;
+      width: 200px;
+      font:16px "PT Sans", sans-serif;
+      letter-spacing: 3px;
+      font-size: 1.25rem;
+      text-align: center;
+      background-color: #292E33;
+      text-transform: uppercase;
+      padding: 10px;
+      margin: 30px auto 0 0;
+    }
+    #b5 {
+      /*background-color: blueviolet;*/
+      padding: 10px 0;
+      margin: 5px 0;
+      font:16px "Open Sans", sans-serif;
+      color: #292E33;
+    }
+    #c1{
+      background-image: url("image/fon.png");
+      border-radius: 50%;
+      height: 380px;
+      width: 380px;
+      margin: 150px 0 0 120px;
+      min-width: 380px;
+    }
+    #c2 {
+      border-radius: 50%;
+      background-image: url("image/tetka.jpg");
+      background-size: cover;
+      height: 380px;
+      width: 380px;
+      margin: -430px -150px 0 10px;
+      min-width: 380px;
+    }
+
+    #c3 {
+      margin: 20px 0 0 5px;
+      background-image: url("image/2023-02-24_18-00-29.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 180px;
+    }
+
+
+    #c4 {
+      /*background-color: red;*/
+      height: content-box;
+      font: 20px "Raleway", sans-serif;
+      text-transform: none;
+      line-height: 0.01em;
+      min-width: 490px;
+      width: 490px;
+      color: #4E6765;
+      margin: 0 0 -10px 0;
+    }
+    #c5 {
+      /*background-color: orange;*/
+      height: content-box;
+      font: 35px "Raleway", sans-serif;
+      /*text-transform: none;*/
+      text-transform: none;
+      line-height: 1.1;
+      font-weight: 400;
+      min-width: 490px;
+      color: #111111;
+      margin: -30px 0;
+      width: 490px;
+    }
+    #c6 {
+      /*background-color: green;*/
+      height: content-box;
+      font: 18px "Open Sans", sans-serif;
+      font-family: 'Open Sans',sans-serif;
+      text-transform: none;
+      line-height: 1.5em;
+      font-weight: 500;
+      width: 490px;
+      min-width: 490px;
+      color: #808080;
+      margin: -20px 0 0 0;
+    }
+    #c7 {
+      /*background-color: blue;*/
+      padding: 10px 0;
+      margin: 5px 0;
+      font:16px "Open Sans", sans-serif;
+      color: #111111;
+      min-width: 490px;
+      width: 490px;
+    }
+    #c8 {
+      background-color: #292E33;
+      color: #FFFFFF;
+      height: 30px;
+      width: 200px;
+      font:16px "PT Sans", sans-serif;
+      letter-spacing: 3px;
+      font-size: 1.25rem;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 10px;
+      margin: 0 auto 0 0;
+    }
+
+
+    #d1{
+      /*background-color: green;*/
+      background-image: url("image/imgonline-com-ua-Transparent-backgr-MNYphQ6gcRp2RjwD.png");
+      background-size: 170px 70px;
+      background-repeat: no-repeat;
+      width: 170px;
+      height: 90px;
+      margin: 20px 0 0 320px;
+    }
+    #d2 {
+      /*background-color: pink;*/
+      color: #111111;
+      font: 30px "Raleway", sans-serif;
+    }
+    #d3 {
+      /*background-color: green;*/
+      color: #111111;
+      font: 18px "Open Sans", sans-serif;
+      font-size: 1.125rem;
+    }
+    #d4 {
+      /*background-color: pink;*/
+      padding: 10px 0;
+      margin: 5px 0;
+      font:16px "Open Sans", sans-serif;
+      color: #111111;
+      min-width: 490px;
+      width: 490px;
+    }
+    #d5 {
+      /*background-color: green;*/
+      /*background-color: #292E33;*/
+      color: #111111;
+      height: 30px;
+      width: 200px;
+      font:16px "PT Sans", sans-serif;
+      letter-spacing: 3px;
+      font-size: 1.25rem;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 10px;
+      margin: 0 auto 0 0;
+      border:1px solid black
+    }
+
+    #d6{
+      /*background-color: blueviolet;*/
+      border-radius: 50%;
+      background-image: url("image/hom.jpg");
+      background-size: cover;
+      height: 500px;
+      width: 500px;
+      margin: 70px 0 0 0;
+      min-width: 500px;
+    }
+    #d7 {
+      /*background-color: yellow;*/
+      background-image: url("image/imgonline-com-ua-Transparent-backgr-MNYphQ6gcRp2RjwD.png");
+      background-size: 170px 70px;
+      background-repeat: no-repeat;
+      width: 170px;
+      height: 90px;
+      margin: -50px 0 0 300px;
+    }
+
+    #e1{
+      /*background-color: grey;*/
+      height: auto;
+      min-width: 500px;
+      color: #111111;
+      font: 1.5rem "Raleway", sans-serif;
+      font-style: italic;
+      padding: 10px;
+    }
+
+    #e2 {
+      /*background-color: pink;*/
+      height: auto;
+      width: 90%;
+      min-width: 500px;
+      color: #111111;
+      font-family: 'Open Sans',sans-serif;
+      font-size: 1.25rem;
+      text-align: justify;
+      line-height: 1.6;
+      padding: 10px;
+    }
+
+    #e3 {
+      /*background-color: grey;*/
+      margin: 250px 0 0 5px;
+      background-image: url("image/2023-02-24_18-00-29.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 180px;
+    }
+    #e4 {
+
+      /*background-color: pink;*/
+      height: auto;
+      min-width: 500px;
+      color: #111111;
+      font-family: 'Open Sans',sans-serif;
+      font-size: 1.25rem;
+      text-align: justify;
+      line-height: 1.6;
+      padding: 10px;
+    }
+
+
+    #f1{
+      /*background-color: grey;*/
+      height: auto;
+      min-width: 400px;
+      padding: 10px;
+      margin: 0 0 -30px 80px;
+      font-size: 2.3rem;
+      line-height: 1.1;
+      font-family: Raleway,sans-serif;
+      text-align: left;
+      box-sizing: border-box;
+      word-wrap: break-word;
+    }
+    #f2 {
+      margin: -30px 0 0 80px;
+      /*background-color: pink;*/
+      padding: 10px;
+      height: auto;
+      min-width: 400px;
+      font-family: 'Open Sans',sans-serif;
+      font-size: 1.25rem;
+      text-align: justify;
+      line-height: 1.6;
+    }
+    #f3 {
+      color: #454545;
+      height: 30px;
+      width: 200px;
+      font:16px "Open Sans", sans-serif;
+      font-size: 1.25rem;
+      text-align: center;
+      padding: 10px;
+      margin: 0 0 0 80px;
+      border-width: 2px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    #f4 {
+      /*background-color: pink;*/
+      width: 500px;
+      height:600px;
+
+      background-image: url("image/te.jpg");
+      background-size: 500px 600px;
+      background-repeat: no-repeat;
+      align-items: center;
+
+      /*background-position: center calc(100%);*/
+      min-height: 600px;
+      min-width: 500px;
+    }
+    #f5 {
+      height: 65px;
+      background-color: white;
+      margin: 500px 0 0 -280px;
+      justify-content: center;
+      min-width: 279px;
+      min-height: 20px;
+      font:16px "Open Sans", sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding-top: 20px;
+
+    }
+
+    #parent_for_mini_1{
+      background-image: url("image/parent_for_mini_1.png");
+      background-size: 609px 420px;
+      background-repeat: no-repeat;
+      align-items: center;
+    }
+
+    #parent_for_mini_4{
+      background-image: url("image/parent_for_mini_4.png");
+      background-size: 607px 420px;
+      background-repeat: no-repeat;
+      align-items: center;
+    }
+    #mini_1{
+      background-image: url("image/mini_1.png");
+      background-size: 305px 300px;
+      background-repeat: no-repeat;
+      align-items: center;
+    }
+    #mini_4{
+      background-image: url("image/mini_4.png");
+      background-size: 305px 300px;
+      background-repeat: no-repeat;
+      align-items: center;
+    }
+    .text_mini{
+      width: 80%;
+      padding: 10px 0 0 40px;
+      font: 16px "Open Sans", sans-serif;
+      text-align: left;
+      height: content-box;
+      line-height: 1.6;
+    }
+    #mini_2{
+      background-color: #f2f2f2;
+      color: #2a2d32;
+    }
+    #mini_3{
+      background-color: #2a2d32;
+      color: #f2f2f2;
+    }
+    #text_1{
+      font: 24px "Raleway", sans-serif;
+    }
+    #text_3{
+      font: 24px "Raleway", sans-serif;
+    }
+
+    #ded_7{
+      width: 100%;
+      height:600px;
+      display: flex;
+      flex-direction: column;
+      background-image: url("image/ijij.png");
+      min-width: 1040px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      align-items: center;
+    }
+    #pa_1{
+      height: 30%;
+      align-items: center;
+      text-align: center
+    }
+    #par_1{
+      font: 27px "Archivo Black"
+    }
+    #par_2{
+      margin: -20px 0 0 0;
+    }
+    #pa_2{
+      height: 70%;
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .kk{
+      width: 100%;
+      height: 50%;
+      color: #2a2d32;
+      font-family: 'Open Sans',sans-serif;
+    }
+    .okno{
+      width: 20%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      background-color: #f2f2f2;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .krug{
+      border-radius: 50%;
+      background-color: #99ceca;
+      text-align: center;
+      font: 17px "Oswald", sans-serif;
+      color: #ffffff;
+      margin: 15px 0 0 -120px;
+    }
+
+    .zagol{
+      height: auto;
+      width: 80%;
+      text-align: left;
+      margin: -20px 0 0 20px;
+      font:15px "Raleway", sans-serif;
+    }
+    .osnov{
+      font-family: 'Open Sans',sans-serif;
+      width: 80%;
+      margin: 0 0 0 20px;
+      height: auto;
+      font-style: italic;
+      text-align: left;
+      line-height: 1.6;
+    }
+    .learn_more{
+      font-family: 'Open Sans',sans-serif;
+      color: #111111;
+      border-width: 2px;
+      border-style: none none solid;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+      border-color: #89d0ca;
+      width: 60%;
+      height: auto;
+      text-align: left;
+      margin: 0 0 0 -43px;
+    }
+    #ded_8{
+      width: 100%;
+      height:900px;
+      background-image: url("image/fon.png");
+      display: flex;
+      flex-direction: column;
+      /*flex-direction: row;*/
+      min-width: 1040px;
+      background-size: 1520px 1000px;
+    }
+    #bolshoe{
+      /*background-color: purple;*/
+      height: 90%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+    #malenroe{
+      height: 180px;
+      /*background-color: #2a2d32;*/
+      margin: -150px auto 0 auto;
+      align-items: center;
+      background-color: #2a2d32;
+      width: 800px;
+      min-width: 800px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    #parent_88{
+      width: 20%;
+      height:600px;
+      margin: 170px 0 20px auto;
+      display: flex;
+      flex-direction:row;
+      min-width: 500px;
+      box-shadow: 10px 5px 5px grey;
+
+    }
+    #parent_99{
+      background-color: white;
+      width: 30%;
+      height: 500px;
+      margin: 80px auto 0 -32px;
+      display: flex;
+      flex-direction: column;
+      min-width: 500px;
+      box-shadow: 10px 5px 5px grey;
+    }
+
+    #ff1{
+      /*background-color: grey;*/
+      height: auto;
+      min-width: 400px;
+      margin: 0 50px;
+      font:48px Oswald,sans-serif;
+      text-align: center;
+      box-sizing: border-box;
+      word-wrap: break-word;
+    }
+    #ff2 {
+      margin: -50px 50px 0 50px;
+      height: auto;
+      min-width: 400px;
+      width: 400px;
+      font-family: 'Open Sans',sans-serif;
+
+    }
+    #ff3 {
+      margin: 40px 0 0 50px;
+      /*background-color: pink;*/
+      height: auto;
+      width: 400px;
+      min-width: 400px;
+      font-family: 'Open Sans',sans-serif;
+    }
+    #ff4{
+      margin: 40px 0 0 50px;
+      padding: 0;
+      height: auto;
+      width: 400px;
+      min-width: 400px;
+      font-family: 'Open Sans',sans-serif;
+    }
+    #ff5 {
+      height: auto;
+      width: 100px;
+      font:16px "Open Sans", sans-serif;
+      letter-spacing: 3px;
+      font-size: 1.25rem;
+      text-align: center;
+      background-color: #292E33;
+      text-transform: uppercase;
+      padding: 10px;
+      margin: 30px 0 0 200px;
+    }
+    #ff6 {
+      padding: 0;
+      margin: 0 0 0 200px;
+      font:16px "Open Sans", sans-serif;
+      color: #292E33;
+      min-width: 120px;
+    }
+
+    #ff7 {
+      /*фото*/
+      width: 250px;
+      height:600px;
+      background-image: url("image/rtt.jpg");
+      background-size: 500px 600px;
+      background-repeat: no-repeat;
+      align-items: center;
+      min-height: 600px;
+      min-width: 500px;
+    }
+    #qw{
+      height: 100%;
+      width: 220px;
+      text-align: center;
+    }
+    #we{
+      height: 100%;
+      width: 220px;
+      text-align: center;
+    }
+    #er{
+      height: 100%;
+      width: 220px;
+      text-align: center;
+    }
+    .qwer{
+      width: 100%;
+      font-family: Raleway,sans-serif;
+      color: white;
+      text-align: center;
+    }
+    #ded_9{
+      width: 100%;
+      height:250px;
+      background-color: #454545;
+      display: flex;
+      flex-direction: column;
+      min-width: 1040px;
+    }
+    .asd{
+      height: 50%;
+      margin: 0 auto;
+      width: 500px;
+      text-align: center;
+      color: white;
+      font:16px "Open Sans", sans-serif;
+      padding-top: 20px;
+    }
+    #yui{
+      margin: 0 0 0 -30px;
+    }
+    #tyu{
+      margin: 0 0 0 -30px;
+    }
+    #ert{
+      margin: 0 0 0 -30px;
+    }
+    #rty{
+      margin: 0 0 0 -30px;
+    }
+  </style>
+</head>
+
+<body>
+<nav class="sticky">
+  <ul>
+
+  </ul>
+</nav>
+
+<div id="ded">
+  <div id="parent_0">
+    <div class="batar" id ="b1"><h5>o n l i n e &nbsp; l e a r n i n g</h5></div>
+    <div class="batar" id ="b2"><h1><span style="font-weight: normal;">Learn</span> Everyday</h1></div>
+    <div class="batar" id ="b3"><h5><span style="font-weight: normal;">Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></h5></div>
+    <div class="batar" id ="b4"><a style="color: #ffffff">read more</a></div>
+    <div class="batar" id ="b5"><p>Image by <a style="color: #292E33" href="https://www.freepik.com/photos/woman">Frepik</a></p></div>
+  </div>
+  <div id="parent_1"></div>
+</div>
+
+
+<div id="ded_2">
+  <div id="parent_2">
+    <div class="divan" id ="c1"></div>
+    <div class="divan" id ="c2"></div>
+    <div class="divan" id ="c3"></div>
+  </div>
+
+  <div id="parent_3">
+    <div class="batar" id ="c4"><h4><span style="font-weight: normal;">Get access to high quality learning!</span></h4></div>
+    <div class="batar" id ="c5"><h2><span style="font-weight: normal;">Join online <br>courses</span> today</h2></div>
+    <div class="batar" id ="c6"><p>Etiam velit purus, vehicula quis imperdiet dignissim,<br> convallis vitae nisl. Nullam facilisi. Pellentesque non <br>pulvinar justo. Nullam eget neque ut tellus ornare ullamcorper ulla ambco mattis for nulla glavrida egesed!</p></div>
+    <div class="batar" id ="c7"><p>Image by <a style="color: #111111" href="https://www.freepik.com/photos/woman">Frepik</a></p></div>
+    <div class="batar" id ="c8"><a style="color: #ffffff">read more</a></div>
+  </div>
+
+</div>
+
+<div id="ded_3">
+  <div id="parent_4">
+    <div class="batar" id ="d1"></div>
+    <div class="batar" id ="d2"><h1><span style="font-weight: normal;">Train Your Brain <br>Today!</span></h1></div>
+    <div class="batar" id ="d3"><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in ​reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+    <div class="batar" id ="d4"><p>Image from <a style="color: #292E33" href="https://www.freepik.com/photos/woman">Frepik</a></p></div>
+    <div class="batar" id ="d5"><a style="color: #111111">all courses</a></div>
+  </div>
+
+  <div id="parent_5">
+    <div class="divan" id ="d6"></div>
+    <div class="divan" id ="d7"></div>
+  </div>
+
+</div>
+
+<div id="ded_4">
+  <div id="parent_6">
+    <div class="divan" id ="e1"><h2>Learn to enjoy <br> <span style="font-weight: normal;">every minute of your life.</span></h2></div>
+    <div class="divan" id ="e2"><p>Volutpat odio facilisis mauris sit amet massa. Aenean et tortor at risus viverra adipiscing at. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Cursus metus aliquam eleifend mi. Duis ut diam quam nulla porttitor massa. Turpis egestas pretium aenean pharetra magna ac placerat. Aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer.</p></div>
+
+  </div>
+
+  <div id="parent_7">
+    <div class="divan" id ="e3"></div>
+    <div class="divan" id ="e4"><p>Varius morbi enim nunc faucibus a pellentesque. Arcu bibendum at varius vel pharetra vel turpis nunc. Eu ultrices vitae auctor eu augue ut lectus arcu. Vulputate sapien nec sagittis aliquam malesuada. Massa enim nec dui nunc mattis enim. Lectus proin nibh nisl condimentum id.</p> </div>
+
+  </div>
+
+</div>
+
+<div id="ded_5">
+  <div id="parent_8">
+    <div class="divan" id ="f1"><h1>Online<span style="font-weight: normal;">Learning</span></h1></div>
+    <div class="divan" id ="f2"><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p></div>
+    <div class="divan" id ="f3"><a style="color: #454545">learn more</a></div>
+  </div>
+
+  <div id="parent_9">
+    <div class="divan" id ="f4"></div>
+    <div class="divan" id ="f5"><p>Image from <a style="color: #111111" href="https://www.freepik.com/photos/woman">Frepik</a></p></div>
+
+  </div>
+
+</div>
+
+<div id="ded_6">
+  <div class="very_big" id="ded_mini_podpis"><h1>Innovations <span style="font-weight: normal;">in Online Learning</span></h1></div>
+  <div class="very_big" id="ded_mini">
+    <div class="big_big" id="big_big_0">
+      <div class="parent_for_mini" id ="parent_for_mini_1"></div>
+      <div class="parent_for_mini" id ="parent_for_mini_2">
+        <div class="mini" id ="mini_1"></div>
+        <div class="mini" id ="mini_2">
+          <div class="text_mini" id="text_1"><h4><span style="font-weight: normal;">Virtual</span> Classroom</h4></div>
+          <div class="text_mini" id="text_2"><p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="big_big" id="big_big_1">
+      <div class="parent_for_mini" id ="parent_for_mini_3">
+        <div class="mini" id ="mini_3">
+          <div class="text_mini" id="text_3"><h4><span style="font-weight: normal;">Modern</span> Education</h4></div>
+          <div class="text_mini" id="text_4"><p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p></div>
+          <div class="text_mini" id="text_5"><p>Image from <a style="color: #f2f2f2" href="https://www.freepik.com/photos/woman">Frepik</a></p></div>
+        </div>
+        <div class="mini" id ="mini_4"></div>
+      </div>
+      <div class="parent_for_mini" id ="parent_for_mini_4"></div>
+
+    </div>
+  </div>
+</div>
+
+<div id="ded_7">
+  <div class="very_big" id="pa_1">
+    <div class="kk" id ="par_1"><h1>Education and Learning</h1></div>
+    <div class="kk" id ="par_2"><h3>Learning is something we do almost every day</h3></div>
+  </div>
+  <div class="very_big" id="pa_2">
+    <div class="okno" id ="okno_1">
+      <div class="krug" id ="krug_1"><h1>01</h1></div>
+      <div class="zagol" id ="zagol_1"><h2>Teaching</h2></div>
+      <div class="osnov" id ="osnov_1"><p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p></div>
+      <div class="learn_more" id ="learn_more_1"><a style="color: #454545">learn more</a></div>
+    </div>
+    <div class="okno" id ="okno_2">
+      <div class="krug" id ="krug_2"><h1>02</h1></div>
+      <div class="zagol" id ="zagol_2"><h2>Innovations</h2></div>
+      <div class="osnov" id ="osnov_2"><p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p></div>
+      <div class="learn_more" id ="learn_more_2"><a style="color: #454545">learn more</a></div>
+    </div>
+    <div class="okno" id ="okno_3">
+      <div class="krug" id ="krug_3"><h1>03</h1></div>
+      <div class="zagol" id ="zagol_3"><h2>Students</h2></div>
+      <div class="osnov" id ="osnov_3"><p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p></div>
+      <div class="learn_more" id ="learn_more_3"><a style="color: #454545">learn more</a></div>
+    </div>
+    <div class="okno" id ="okno_4">
+      <div class="krug" id ="krug_4"><h1>04</h1></div>
+      <div class="zagol" id ="zagol_4"><h2>Resources</h2></div>
+      <div class="osnov" id ="osnov_4"><p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p></div>
+      <div class="learn_more" id ="learn_more_4"><a style="color: #454545">learn more</a></div>
+    </div>
+  </div>
+</div>
+
+
+<div id="ded_8">
+  <div id="bolshoe">
+    <div id="parent_88">
+      <div class="divan" id ="ff7"></div>
+    </div>
+
+    <div id="parent_99">
+      <div class="divan" id ="ff1"><h2><span style="font-weight: normal;">Contact us</span></h2></div>
+      <div class="divan" id ="ff2"><input type="text"  placeholder="Enter your Name"></div>
+      <div class="divan" id ="ff3"><input type="text" placeholder="Enter a valid email address"></div>
+      <div class="divan" id ="ff4"><textarea name="comment" cols="40" rows="3" placeholder="Enter a valid email address"></textarea></div>
+      <div class="divan" id ="ff5"><a style="color: #ffffff">submit</a></div>
+      <div class="divan" id ="ff6"><p>Image by <a style="color: #292E33" href="https://www.freepik.com/photos/woman">Frepik</a></p></div>
+    </div>
+  </div>
+  <div id="malenroe">
+    <div id="qw">
+      <div class="qwer" id="qwe"><h2>CALL US</h2></div>
+      <div class="qwer" id="wer"><h3><span style="font-weight: normal;">1 (234) 567-891,<br> 1 (234) 987-654</span></h3></div>
+    </div>
+    <div id="we">
+      <div class="qwer" id="ert"><h2>LOCATION</h2></div>
+      <div class="qwer" id="rty"><h3><span style="font-weight: normal;">121 Rock Sreet, 21 Avenue, New York,<br> NY 92103-9000</span></h3></div>
+    </div>
+    <div id="er">
+      <div class="qwer" id="tyu"><h2>BUSINESS HOURS</h2></div>
+      <div class="qwer" id="yui"><h3><span style="font-weight: normal;">Mon – Fri …… 10 am – 8 pm, Sat, Sun ....… Closed</span></h3></div>
+    </div>
+  </div>
+</div>
+
+<div id="ded_9">
+  <div class="asd" id="zxc"><p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p></div>
+  <div class="asd" id="xcv"><p><a style="color: #89d0ca" href="https://www.freepik.com/photos/woman">Website Templates</a> created with <a style="color: #89d0ca" href="https://www.freepik.com/photos/woman">Website Builder Software</a>.</p></div>
+</div>
+
+</body>
+</html>
