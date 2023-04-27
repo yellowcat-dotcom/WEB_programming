@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Крестики нолики пример</title>
+  <style>
+    button {
+      width: 50px;
+      height: 50px;
+    }
+    .center {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      margin-left: -80px;
+      margin-top: -80px;
+    }
+
+    table.center {
+      width: 160px;
+      height: 160px;
+    }
+    p.center {
+      margin-top: -112px;
+      text-align: center;
+    }
+
+    div#rezult {
+      margin-top: 1000000000000000px;
+    }
+    a {
+      color: black;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<p class="center">Нажмите, чтобы начать!</p>
+<table class="center">
+  <tr>
+    <td><button id="id_1" onclick="foo_1()" class="block"></button></td>
+    <td><button id="id_2" onclick="foo_2()" class="block"></button></td>
+    <td><button id="id_3" onclick="foo_3()" class="block"></button></td>
+  </tr>
+  <tr>
+    <td><button id="id_4" onclick="foo_4()" class="block"></button></td>
+    <td><button id="id_5" onclick="foo_5()" class="block"></button></td>
+    <td><button id="id_6" onclick="foo_6()" class="block"></button></td>
+  </tr>
+  <tr>
+    <td><button id="id_7" onclick="foo_7()" class="block"></button></td>
+    <td><button id="id_8" onclick="foo_8()" class="block"></button></td>
+    <td><button id="id_9" onclick="foo_9()" class="block"></button></td>
+  </tr>
+</table>
+<div id="rezult"></div>
+<div id="arhiv"></div>
+</body>
+</html>
+
+<script>
+  var permennaya , button, allBlock ;var arhiv = 1;
+function  foo_1 ()
+{
+  rezult = document.getElementById("rezult").innerHTML;
+  button =document.getElementById("id_1").innerHTML; //alert(button);
+  if(button === "")
+  {
+    if(rezult == "x")
+    {
+      permennaya = "0"
+    }
+    else
+    {
+      permennaya = "x";
+    }
+    document.getElementById("id_1").innerHTML  = permennaya;
+    document.getElementById("rezult").innerHTML  = permennaya;
+    count = document.getElementById("arhiv").innerHTML  +=  arhiv;  count = count.length; //alert(count);
+  }
+  winner();
+}
+function  foo_2 ()
+{
+  rezult = document.getElementById("rezult").innerHTML;
+  button =document.getElementById("id_2").innerHTML; //alert(button);
+  if(button === "")
+  {
+    if(rezult == "x")
+    {
+      permennaya = "0"
+    }
+    else
+    {
+      permennaya = "x";
+    }
+    document.getElementById("id_2").innerHTML  = permennaya;
+    document.getElementById("rezult").innerHTML  = permennaya;
+    count = document.getElementById("arhiv").innerHTML  +=  arhiv;  count = count.length; //alert(count);
+  }
+  winner();
+}
+function  foo_3 ()
+{
+  rezult = document.getElementById("rezult").innerHTML;
+  button =document.getElementById("id_3").innerHTML; //alert(button);
+  if(button === "")
+  {
+    if(rezult == "x")
+    {
+      permennaya = "0"
+    }
+    else
+    {
+      permennaya = "x";
+    }
+    document.getElementById("id_3").innerHTML  = permennaya;
+    document.getElementById("rezult").innerHTML  = permennaya;
+    count = document.getElementById("arhiv").innerHTML  +=  arhiv;  count = count.length; //alert(count);
+  }
+  winner();
+}
+function  foo_4 ()
+{
+  rezult = document.getElementById("rezult").innerHTML;
+  button =document.getElementById("id_4").innerHTML; //alert(button);
+  if(button === "")
+  {
+    if(rezult == "x")
+    {
+      permennaya = "0"
+    }
+    else
+    {
+      permennaya = "x";
+    }
+    document.getElementById("id_4").innerHTML  = permennaya;
+    document.getElementById("rezult").innerHTML  = permennaya;
+    count = document.getElementById("arhiv").innerHTML  +=  arhiv;  count = count.length; //alert(count);
+  }
+  winner();
+}
+function  foo_5 ()
+{
+  rezult = document.getElementById("rezult").innerHTML;
+  button =document.getElementById("id_5").innerHTML; //alert(button);
+  if(button === "")
+  {
+    if(rezult == "x")
+    {
+      permennaya = "0"
+    }
+    else
+    {
+      permennaya = "x";
+    }
+    document.getElementById("id_5").innerHTML  = permennaya;
+    document.getElementById("rezult").innerHTML  = permennaya;
+    count = document.getElementById("arhiv").innerHTML  +=  arhiv;  count = count.length; //alert(count);
+  }
+  winner();
+}
+function  foo_6 ()
+{
+  rezult = document.getElementById("rezult").innerHTML;
+  button =document.getElementById("id_6").innerHTML; //alert(button);
+  if(button === "")
+  {
+    if(rezult == "x")
+    {
+      permennaya = "0"
+    }
+    else
+    {
+      permennaya = "x";
+    }
+    document.getElementById("id_6").innerHTML  = permennaya;
+    document.getElementById("rezult").innerHTML  = permennaya;
+    count = document.getElementById("arhiv").innerHTML  +=  arhiv;  count = count.length; //alert(count);
+  }
+  winner();
+}
+function  foo_7 ()
+{
+  rezult = document.getElementById("rezult").innerHTML;
+  button =document.getElementById("id_7").innerHTML; //alert(button);
+  if(button === "")
+  {
+    if(rezult == "x")
+    {
+      permennaya = "0"
+    }
+    else
+    {
+      permennaya = "x";
+    }
+    document.getElementById("id_7").innerHTML  = permennaya;
+    document.getElementById("rezult").innerHTML  = permennaya;
+    count = document.getElementById("arhiv").innerHTML  +=  arhiv;  count = count.length; //alert(count);
+  }
+  winner();
+}
+function  foo_8 ()
+{
+  rezult = document.getElementById("rezult").innerHTML;
+  button =document.getElementById("id_8").innerHTML; //alert(button);
+  if(button === "")
+  {
+    if(rezult == "x")
+    {
+      permennaya = "0"
+    }
+    else
+    {
+      permennaya = "x";
+    }
+    document.getElementById("id_8").innerHTML  = permennaya;
+    document.getElementById("rezult").innerHTML  = permennaya;
+    count = document.getElementById("arhiv").innerHTML  +=  arhiv;  count = count.length; //alert(count);
+  }
+  winner();
+}
+function  foo_9 ()
+{
+  rezult = document.getElementById("rezult").innerHTML;
+  button =document.getElementById("id_9").innerHTML; //alert(button);
+  if(button === "")
+  {
+    if(rezult == "x")
+    {
+      permennaya = "0"
+    }
+    else
+    {
+      permennaya = "x";
+    }
+    document.getElementById("id_9").innerHTML  = permennaya;
+    document.getElementById("rezult").innerHTML  = permennaya;
+    count = document.getElementById("arhiv").innerHTML  +=  arhiv;  count = count.length; //alert(count);
+  }
+  winner();
+}
+function winner(){
+  allBlock =  document.getElementsByClassName("block");console.log(allBlock);
+  if(allBlock[0].innerHTML =='x' & allBlock[1].innerHTML =='x' & allBlock[2].innerHTML =='x'){alert('Крестики победили!'); location.reload(); fail;}
+  if(allBlock[3].innerHTML =='x' & allBlock[4].innerHTML =='x' & allBlock[5].innerHTML =='x'){alert('Крестики победили!'); location.reload(); fail;}
+  if(allBlock[6].innerHTML =='x' & allBlock[7].innerHTML =='x' & allBlock[8].innerHTML =='x'){alert('Крестики победили!'); location.reload(); fail;}
+
+  if(allBlock[0].innerHTML =='x' & allBlock[3].innerHTML =='x' & allBlock[6].innerHTML =='x'){alert('Крестики победили!'); location.reload(); fail;}
+  if(allBlock[1].innerHTML =='x' & allBlock[4].innerHTML =='x' & allBlock[7].innerHTML =='x'){alert('Крестики победили!'); location.reload(); fail;}
+  if(allBlock[2].innerHTML =='x' & allBlock[5].innerHTML =='x' & allBlock[8].innerHTML =='x'){alert('Крестики победили!'); location.reload(); fail;}
+
+  if(allBlock[0].innerHTML =='x' & allBlock[4].innerHTML =='x' & allBlock[8].innerHTML =='x'){alert('Крестики победили!'); location.reload(); fail;}
+  if(allBlock[2].innerHTML =='x' & allBlock[4].innerHTML =='x' & allBlock[6].innerHTML =='x'){alert('Крестики победили!'); location.reload(); fail;}
+
+  if(allBlock[0].innerHTML =='0' & allBlock[1].innerHTML =='0' & allBlock[2].innerHTML =='0'){alert('Нолики победили!'); location.reload(); fail;}
+  if(allBlock[3].innerHTML =='0' & allBlock[4].innerHTML =='0' & allBlock[5].innerHTML =='0'){alert('Нолики победили!'); location.reload(); fail;}
+  if(allBlock[6].innerHTML =='0' & allBlock[7].innerHTML =='0' & allBlock[8].innerHTML =='0'){alert('Нолики победили!'); location.reload(); fail;}
+
+  if(allBlock[0].innerHTML =='0' & allBlock[3].innerHTML =='0' & allBlock[6].innerHTML =='0'){alert('Нолики победили!'); location.reload(); fail;}
+  if(allBlock[1].innerHTML =='0' & allBlock[4].innerHTML =='0' & allBlock[7].innerHTML =='0'){alert('Нолики победили!'); location.reload(); fail;}
+  if(allBlock[2].innerHTML =='0' & allBlock[5].innerHTML =='0' & allBlock[8].innerHTML =='0'){alert('Нолики победили!'); location.reload(); fail;}
+
+  if(allBlock[0].innerHTML =='0' & allBlock[4].innerHTML =='0' & allBlock[8].innerHTML =='0'){alert('Нолики победили!'); location.reload(); fail;}
+  if(allBlock[2].innerHTML =='0' & allBlock[4].innerHTML =='0' & allBlock[6].innerHTML =='0'){alert('Нолики победили!'); location.reload(); fail;}
+
+  if(count == "9") { alert('Ничья!');  location.reload(); }
+  console.log(allBlock);
+}
+</script>

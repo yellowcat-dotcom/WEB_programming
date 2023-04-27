@@ -14,7 +14,7 @@
       margin: 0 auto;
       color: #14151B;
       height: 70px;
-      width: 500px;
+      width: 600px;
       background-color: #707A8E;
       padding: 15px;
     }
@@ -27,7 +27,6 @@
       text-align: center;
       margin: 20px auto;
       font-weight:bold;
-
     }
     #calendar2 thead tr:last-child {
       font-size: medium;
@@ -43,32 +42,111 @@
     }
     #calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
       color:#707A8E;
-
     }
     #calendar2 tbody td.today {
       background: #707A8E;
       color: #D28F20;
+    }
+    #myTable tbody td{
+      border: 1px solid grey;
+    }
+    #myTable{
+      margin: 10px auto -10px auto;
+    }
+
+    #DT4{
+      width: 80%;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      flex-direction: row;
+    }
+
+    .sladosti ul {
+      display: none;
+    }
+
+    li {
+      list-style-type: none;
+      /* Убираем маркеры */
+    }
+
+    /*task_8*/
+    .container {
+      position: relative;
+    }
+
+    .container img {
+      position: relative;
+      z-index: 1; /*картинка выше текста*/
+    }
+
+    .container .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      z-index: 1;
+    }
+
+    /*размытость текста при наведении курсора*/
+    .container:hover .text {
+      opacity: 0.6;
+    }
+
+    /*степень размытости при наведении курсора*/
+    .container:hover img {
+      opacity: 0;/*степень размытости*/
+      transition: opacity 1s ease;
+    }
+  /*  task_6*/
+
+
+  /*  .link {*/
+  /*    color: black;*/
+  /*    font-style: normal;*/
+  /*    text-decoration: underline;*/
+  /*  }*/
+
+  /*  .link:hover {*/
+  /*    color: blue;*/
+  /*    font-style: italic;*/
+  /*    text-decoration: none;*/
+  /*  }*/
+    #menu {
+      display: none;
+    }
+  /* ФОРМА */
+    #form_glavn{
+      background-color: #707A8E;
+      width: 42%;
+      margin: 1% auto;
+      text-align: left;
+      padding: 0 0 0 20px;
+    }
+    input[type="radio"] {
+      width: 20px;
+      height: 20px;
+    }
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+    }
+    input[type="submit"] {
+      width: 200px;
+      padding: 10px;
+      font-size: 16px;
+      margin: 1%;
+    }
+    .block {
+      width: 200px;
+      height: 200px;
 
     }
   </style>
-  <script>
-    function show_Time(){
-      let D=new Date();
-      let day=D.toLocaleString('ru', {weekday: 'long'});
-      let month=D.toLocaleString('ru', {month: 'long'});
-      let DT=document.getElementById("DT");
-      //полная дата и время
-      let data=D.getDate();
-      let year=D.getFullYear();
-      //let time_Hours=D.getHours();
-      let time_Hours=D.toLocaleString('en-US', { hour: 'numeric', hour12: true })
-      let time_Min=D.getMinutes();
-      let time_Sec=D.getSeconds();
-      if (time_Sec<10) {time_Sec="0"+time_Sec}
-      if (data<10) {data="0"+data}
-      DT.innerHTML=day+", "+data+" "+month+" "+year+" "+time_Hours+":"+time_Min+":"+time_Sec;
-    }
-  </script>
+
   <script>
     function hide(str){
       obj = document.getElementById(str);
@@ -78,13 +156,6 @@
       }
     }
   </script>
-  <script>
-    function task3(str){
-      let DT3 = document.getElementById("DT3")
-      let count = document.getElementById(str).childElementCount;
-      DT3.innerHTML="Количество дочерних форм: "+count
-    }
-  </script>
 
 </head>
 <body>
@@ -92,11 +163,9 @@
 <h1 id="zagolovok" style="text-align: center; color: #14151B; padding-top: 30px"> Задание по JS - Вариант 5</h1>
 
 <div class="knopka" id="but" onClick="hide('DT')" style="cursor:pointer;">Задание 1 - Дата/время</div>
-<p id="DT" style="text-align: center; display: none;">
-  <script>
-    setInterval(show_Time, 1000)
-  </script>
-</p>
+<div id="DT" style="text-align: center; display: none;">
+  <script src="show_time.js"></script>
+</div>
 
 <div class="knopka" id="but2" onClick="hide('DT2')" style="cursor:pointer;">Задание 2 - Календарь</div>
 <div id="DT2" style="text-align: center; display: none;">
@@ -106,53 +175,180 @@
     <tr><th>Пн<th>Вт<th>Ср<th>Чт<th>Пт<th>Сб<th>Вс
     <tbody>
   </table>
-  <script>
-    function Calendar2(id, year, month) {
-      var Dlast = new Date(year,month+1,0).getDate(),
-              D = new Date(year,month,Dlast),
-              DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
-              DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
-              calendar = '<tr>',
-              month=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
-      if (DNfirst != 0) {
-        for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
-      }else{
-        for(var  i = 0; i < 6; i++) calendar += '<td>';
-      }
-      for(var  i = 1; i <= Dlast; i++) {
-        if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
-          calendar += '<td class="today">' + i;
-        }else{
-          calendar += '<td>' + i;
-        }
-        if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
-          calendar += '<tr>';
-        }
-      }
-      for(var  i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
-      document.querySelector('#'+id+' tbody').innerHTML = calendar;
-      document.querySelector('#'+id+' thead td:nth-child(2)').innerHTML = month[D.getMonth()] +' '+ D.getFullYear();
-
-    }
-    Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
-  </script>
+  <script src="calendar.js"></script>
 </div>
 
 <div class="knopka" id="but3" onClick="hide('DT3')" style="cursor:pointer;">Задание 3 - Нахождение элементов в DOM – дереве</div>
 <div id="DT3" style=" display: none;">
-  <div id="tyt_forms">
-    <form id="Form_1"></form>
-    <form id="Form_2"></form>
-    <form id="Form_3"></form>
-  </div>
+  <form>
+    <input type="text" placeholder="Введите имя">
+    <input type="submit" value="Отправить">
+  </form>
+  <p>Это просто абзац</p>
+  <form>
+    <input type="email" placeholder="Введите email">
+    <input type="submit" value="Отправить">
+  </form>
+  <div id="form-count"></div>
+</div>
+  <script src="DOM_tree.js"></script>
+</div>
+
+
+<div class="knopka" id="but4" onClick="hide('DT4')" style="cursor:pointer; font-size: 20px;">Задание 4 - Через указанный промежуток времени 100 мс отображать картинку в одном из блоков (номер блока выбирается рандомно)</div>
+<div id="DT4" style=" display: none;">
+  <div class="block"></div>
+  <div class="block"></div>
+  <div class="block"></div>
+  <div class="block"></div>
   <script>
-    task3("tyt_forms")
+    // Получаем все блоки div
+    const blocks = document.querySelectorAll('.block');
+    // Запускаем функцию через каждые 100 миллисекунд
+    setInterval(() => {
+      // Генерируем случайное число от 0 до количества блоков
+      const randomIndex = Math.floor(Math.random() * blocks.length);
+
+      // Выбираем случайный блок и добавляем в него картинку
+      const block = blocks[randomIndex];
+      block.style.backgroundImage = 'url(airplane_017.jpg)';
+
+      // Через 1 секунду (1000 миллисекунд) убираем картинку из блока
+      setTimeout(() => {
+        block.style.backgroundImage = '';
+      }, 1000);
+    }, 1200);
   </script>
 </div>
 
-<div class="knopka" id="but4" onClick="hide('DT4')" style="cursor:pointer;">Задание 4 - </div>
-<div id="DT4" style=" display: none;">
-  igig
+<div class="knopka" id="but5" onClick="hide('DT5')" style="cursor:pointer; font-size: 20px;">Задание 5 - скрипт для для добавления ячейки < td > в таблицу</div>
+<div id="DT5" style=" display: none;">
+  <table id="myTable">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+  </table>
+  <div id="addCellButton">
+    <button onclick="addTableCell()" style=" background-color: #707A8E;">Добавить ячейку</button>
+  </div>
+  <script src="task_5.js"></script>
+</div>
+
+<div class="knopka" id="but6" onClick="hide('DT6')" style="cursor:pointer; font-size: 20px;">Задание 6 - Изменение стилевого оформления: color, font-style, удаление подчеркивания при выхода курсора за пределы объекта ссылка</div>
+<div id="DT6" style=" display: none;">
+  <a href=# class="link">Ссылка</a>
+  <script>
+    const link = document.querySelector('.link');
+
+    link.addEventListener('mouseenter', function() {
+      link.style.textDecoration = 'none';
+      link.style.color="#707A8E";
+      link.style.fontStyle = 'italic';
+      link.style.fontWeight = "bold";
+    });
+
+    link.addEventListener('mouseleave', function() {
+      link.style.textDecoration = 'underline';
+      link.style.color="#0000EE";
+      link.style.fontStyle = 'normal';
+      link.style.fontWeight = "normal";
+    });
+  </script>
+</div>
+
+<div class="knopka" id="but7" onClick="hide('DT7')" style="cursor:pointer; font-size: 20px;">Задание 7 - Сладости</div>
+<div id="DT7" style=" display: none;">
+  <p id="toggle-menu">Здесь сладости</p>
+  <ul id="menu">
+    <li>Конфеты</li>
+    <li>Шоколадки</li>
+    <li>Печенье</li>
+  </ul>
+  <div id="message"></div>
+  <script src="sweets.js"></script>
+</div>
+
+<div class="knopka" id="but8" onClick="hide('DT8')" style="cursor:pointer; font-size: 20px;">Задание 8 - картинка и текст</div>
+<div class="container" id="DT8" style=" display: none;">
+    <img id="img" src="airplane_017.jpg">
+    <div id="txt" class="text">
+      Самолет
+    </div>
+  <script>
+    let img = document.getElementById("img");
+    let text = document.getElementById("txt");
+
+    img.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        text.classList.add('show');
+      }, 100);
+    });
+  </script>
+</div>
+
+<!--имя и фамилия - буквы
+в пароле минимум 8 символов 1 заглавная и 1 спец символ
+в почете есть @
+телефон +7 и кол-во цифр-->
+<div class="knopka" id="but9" onClick="hide('DT9')" style="cursor:pointer; font-size: 20px;">Задание 9-10 ФОРМА</div>
+<div id="DT9" style=" display: none;">
+
+  <form id="form_glavn" method="post">
+    <label for="username">Регистрационное имя:</label>
+    <input type="text" id="username" name="username" required style="height: 30px;" placeholder= "Регистрационное имя" pattern="[А-Яа-я]+"><br>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required style="height: 30px;" placeholder="Пароль" pattern="^(?=.*[A-Z])(?=.*[\W_])(?=.{8,})\S+$"><br>
+    <label for="reg-password-confirm">Подтверждение пароля:</label>
+    <input type="password" id="reg-password-confirm" name="reg-password-confirm" style="height: 30px;" placeholder="Подтверждение пароля" required pattern="^(?=.*[A-Z])(?=.*[\W_])(?=.{8,})\S+$"><br>
+    <label for="email">Электронная почта</label>
+    <input id="email" style="height: 30px;" required pattern="^[A-Za-z0-9\-_]+@[A-Za-z]+\.([A-Za-z]+\.)*[A-Za-z]+$" placeholder="Электронная почта"><br>
+
+    <label for="speciality">Ваша специальность:</label>
+    <select id="speciality" name="speciality" required style="height: 40px;">
+      <option value="" disabled selected >Выберите специальность</option>
+      <option value="developer">Разработчик</option>
+      <option value="designer">Дизайнер</option>
+      <option value="manager">Менеджер</option>
+    </select><br><br>
+
+    <label>Пол:</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Женский</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Мужской</label><br><br>
+
+    <label>Ваши навыки:</label><br>
+
+    <input type="checkbox" id="skill1" name="skill1" value="skill1">
+    <label for="skill1">Навык 1</label>
+    <input type="checkbox" id="skill2" name="skill2" value="skill2">
+    <label for="skill2">Навык 2</label>
+    <input type="checkbox" id="skill3" name="skill3" value="skill3">
+    <label for="skill3">Навык 3</label><br>
+    <input type="checkbox" id="skill4" name="skill4" value="skill4">
+    <label for="skill4">Навык 4</label>
+    <input type="checkbox" id="skill5" name="skill5" value="skill5">
+    <label for="skill5">Навык 5</label>
+    <input type="checkbox" id="skill6" name="skill6" value="skill6">
+    <label for="skill6">Навык 6</label><br>
+    <input type="checkbox" id="skill7" name="skill7" value="skill7">
+    <label for="skill7">Навык 7</label>
+    <input type="checkbox" id="skill8" name="skill8" value="skill8">
+    <label for="skill8">Навык 8</label>
+    <input type="checkbox" id="skill9" name="skill9" value="skill9">
+    <label for="skill9">Навык 9</label><br><br>
+
+    <label for="additional_info">Дополнительные сведения:</label><br>
+    <textarea id="additional_info" name="additional_info" rows="8" cols="73"></textarea><br>
+
+    <input type="submit" value="Зарегистрироваться">
+  </form>
+
 </div>
 </body>
 </html>
